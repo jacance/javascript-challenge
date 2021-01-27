@@ -1,7 +1,8 @@
-# JavaScript and DOM Manipulation
+# UFO Sightings
+![Alt text](static/images/nasa.jpg?raw=true "Title")
 
 ## Background 
-Write code that will create a table dynamically based upon a dataset of 'eye-witness' UFO sightings.
+This project utilizes JavaScript and DOM Manipulation to create a table dynamically based upon a dataset of 'eye-witness' UFO sightings.
 
 ## Automatic Table and Date Search
 - Using a given UFO dataset in the form of an array of JavaScript objects, write code that appends a table to web page and then adds new rows of data for each UFO sighting.
