@@ -30,11 +30,12 @@ function runEnter() {
     // console.log(filterData);
     
     // var summary = d3.select(".table-head")
-    var table = d3.select("#ufo-table")
+    var tbody = d3.select("tbody")
 
+    tbody.text("");
 
     filterData.forEach(function(tabledata) {
-        var tr = table.append("tr");
+        var tr = tbody.append("tr");
 
         tr.append("td").text(tabledata.datetime)
         tr.append("td").text(tabledata.city)
