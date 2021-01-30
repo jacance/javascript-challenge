@@ -5,7 +5,7 @@ var tableData = data;
 var button = d3.select("#filter-btn");
 
 // Select the form
-var form = d3.select("#filters");
+var form = d3.select("form");
 
 // Create event handlers 
 button.on("click", runEnter);
@@ -25,14 +25,12 @@ function runEnter() {
     // Use form input to filter the data by date
     var filterData = tableData.filter(x => x.datetime === inputValue);
   
-    // console.log(inputValue);
-    // console.log(filterData);
     
-    // var summary = d3.select(".table-head")
     var tbody = d3.select("tbody")
 
     tbody.text("");
 
+    // Append filtered data to HTML to display results
     filterData.forEach(function(tabledata) {
         var tr = tbody.append("tr");
 
