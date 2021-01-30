@@ -1,5 +1,5 @@
 # UFO Sightings
-![Alt text](static/images/nasa.jpg?raw=true "Title")
+![Alt text](UFO-level-1/static/images/nasa.jpg?raw=true "Title")
 
 ## Background 
 This project utilizes JavaScript and DOM Manipulation to create a table dynamically based upon a dataset of 'eye-witness' UFO sightings.
