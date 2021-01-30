@@ -10,9 +10,6 @@ var form = d3.select("#myform");
 // Create event handlers 
 button.on("click", runEnter);
 form.on("submit", runEnter);
-form.on("submit", function(){
-    alert('Hi')
-}
 
 // Complete the event handler function for the form
 function runEnter() {
@@ -35,21 +32,14 @@ function runEnter() {
     var inputValue3 = inputElement3.property("value");
     var inputValue4 = inputElement4.property("value");
 
-    // Use form input to filter the data by date
-    // Maybe use if statement to do && but without needing BOTH fields filled
-    var filterData = tableData.filter( {
-        if !(inputValue === "") {
-            x => x.datetime === inputValue}
-        }
-    };
-
-    // Works only when both are filled
-    var filterDataWorksKinda = tableData.filter(x => x.datetime === inputValue && x.city === inputValue1)
+    var filterData = tableData.filter(x => 
+        x.datetime === inputValue &&
+        x.city === inputValue1 &&
+        x.state === inputValue2 &&
+        x.country === inputValue3 &&
+        x.shape === inputValue4);
+    console.log(filterData);
   
-    // console.log(inputValue);
-    // console.log(filterData);
-    
-    // var summary = d3.select(".table-head")
     var tbody = d3.select("tbody");
     
 
@@ -57,37 +47,18 @@ function runEnter() {
 
 
 
-    // filterData.forEach(function(tabledata) {
-    //     var tr = tbody.append("tr");
+    filterData.forEach(function(tabledata) {
+        var tr = tbody.append("tr");
 
-    //     tr.append("td").text(tabledata.datetime)
-    //     tr.append("td").text(tabledata.city)
-    //     tr.append("td").text(tabledata.state)
-    //     tr.append("td").text(tabledata.country)
-    //     tr.append("td").text(tabledata.shape)
-    //     tr.append("td").text(tabledata.durationMinutes)
-    //     tr.append("td").text(tabledata.comments)
-
-    // })
-    
-    tableData.forEach(data => {
-        console.log(data);
-        var row = tableData.append("tr");
-        Object.entries(filterData).forEach(([key, value])=>{
-            // tr = table.append("tr");
-            // tr.append("td").text(key);
-            // tr.append("td").text(value);
-            console.log(key, value);
-            row.append("td").text(value);
-        })
+        tr.append("td").text(tabledata.datetime);
+        tr.append("td").text(tabledata.city);
+        tr.append("td").text(tabledata.state);
+        tr.append("td").text(tabledata.country);
+        tr.append("td").text(tabledata.shape);
+        tr.append("td").text(tabledata.durationMinutes);
+        tr.append("td").text(tabledata.comments);
     });
 
-    console.log(tableData);
-    var allkeys = Object.keys(tableData[0]);
-    var all_values = {};
-    allkeys.forEach(x=>{
-        tableData.forEach(y=>{
-            if (!(x ))
-        })
-    })
+};
+
     
